@@ -1,0 +1,13 @@
+- Criamos nossa infraestrutura de servidor na DigitalOcean;
+- Um servidor de 1GB de memória e 25GB de disco;
+- Vamos acessar pelo IP 157.230.213.241
+- Faça o download do Putty
+- O Putty é um software cliente de SSH utilizado para acessar servidor remotamente de maneira segura
+
+https://the.earth.li/~sgtatham/putty/latest/w64/putty.exe
+
+- Abra o Putty, coloque o IP do servidor e clique em "Open"
+
+- Faça o login como root e coloque a senha
+
+root@ifma-info30:~#
