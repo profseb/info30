@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Eventos de Input Text</title>
+</head>
+<body>
+
+	<br />
+	<br />
+	<br />
+
+	Aluno: <input type="nome" name="" onkeyup="contagem(this)" onkeydown="contagem(this)" onkeypress="contagem(this)" maxlength="30" />
+	<br />
+	<small id="contador">Restam 30 caracteres!</small>
+
+	<script type="text/javascript">
+
+		var cont = 30;
+
+
+		
+		function contagem(caixa) {
+
+			tamanho = caixa.value.length;
+
+			quant = cont - tamanho;
+
+			document.getElementById("contador").innerText = "Restam " + quant + " caracteres!";
+			
+
+		}
+
+		function pressionar() { // onkeypress
+
+			console.log("pressinou");
+
+		}
+
+		function apertar() { // onkeydown
+
+			console.log("Apertou!");
+
+		}
+
+		function soltar() { // onkeyup
+			console.log("Soltou!");
+		}
+
+	</script>
+
+</body>
+</html>

@@ -6,7 +6,7 @@
 	
 
 </head>
-<body onload="bemvindo()" onclose="return fechar()">
+<body onload="bemvindo()">
 
 	<h1>Events and Functions</h1>
 
@@ -55,6 +55,9 @@
 
 		}
 
+		window.onbeforeunload = function() {
+		    return "Ok";
+		};
 
 	</script>
 	
