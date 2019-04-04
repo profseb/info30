@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Events and Functions</title>
+
+	
+
+</head>
+<body onload="bemvindo()" onclose="return fechar()">
+
+	<h1>Events and Functions</h1>
+
+	<form onsubmit="return enviar()" onreset="return limpar()" />
+		
+		Teste: <input type="text" name="teste" /> 
+
+		<input type="button" value="Clique" onclick="conversar()" />
+		<input type="submit" value="Envie" />
+		<input type="reset" value="Limpar" />
+
+	</form>
+
+	<script type="text/javascript">
+
+		function enviar() {
+
+			return confirm("Tem certeza que deseja enviar os dados?");
+
+		}
+		
+		function limpar() {
+
+			return confirm("Tem certeza que deseja descartar os dados deste formulário?");
+		}
+		function conversar() {
+
+			nome = prompt("Informe o seu nome: ");
+
+			if (confirm(nome + ", você está gostando do site?")) {
+				alert("Legal! Obrigado por nos visitar!");
+			} else {
+				alert("Tudo bem! Pode fechar a página! :(");
+			}
+		}
+
+		function bemvindo() {
+
+			alert("Seja bem-vindo ao meu programa!");
+
+		}
+
+		function fechar() {
+
+			return confirm("Tem certeza que deseja fechar esta página!");
+
+		}
+
+
+	</script>
+	
+
+</body>
+</html>
