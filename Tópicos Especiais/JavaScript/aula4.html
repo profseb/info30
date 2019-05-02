@@ -2,11 +2,34 @@
 <html>
 <head>
 	<title>Eventos de Input Text</title>
+
+	<style type="text/css">
+		
+		#senha {
+			padding-right:30px;
+			width:70px;
+		}
+
+		#eye {
+			width:20px;
+			vertical-align: middle;
+			outline: none;
+			margin-left:-30px;
+		}
+
+	</style>
+
 </head>
 <body>
 
 	<br />
 	<br />
+	<br />
+
+	Senha:
+
+	<input type="password" id="senha" name="" /> <input type="image" src="no-eye.jpg" value="" id="eye" onmousedown="showHidePass(this)" onmouseup="showHidePass(this)" />  
+
 	<br />
 
 	Aluno: <input type="nome" name="" onkeyup="contagem(this)" onkeydown="contagem(this)" onkeypress="contagem(this)" maxlength="30" />
@@ -16,6 +39,21 @@
 	<script type="text/javascript">
 
 		var cont = 30;
+
+		function showHidePass(b) {
+
+			s = document.getElementById("senha");
+
+			if (s.type == "password") {
+				s.type = "text";
+				b.src = "eye.jpg";
+
+			} else {
+				s.type = "password";
+				b.src = "no-eye.jpg";
+			}
+
+		}
 
 
 		

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript</title>
+</head>
+<body>
+
+	<br />
+	<br />
+
+	Número 1: <input type="text" id="n1" /> <br />
+	Número 2: <input type="text" id="n2" /> <br />
+
+	<input type="button" value="Calcular Soma" onclick="soma()">
+	<br />
+	<br />
+	Resultado:
+	<input type="text" readonly="" id="r" />
+
+	<script type="text/javascript">
+		
+		function soma() {
+
+			var num1 = +document.getElementById("n1").value;
+			var num2 = +document.getElementById("n2").value;
+
+			s = num1 + num2;
+			document.getElementById("r").value = s;
+			//alert(s);
+
+		}
+
+	</script>
+
+</body>
+</html>
