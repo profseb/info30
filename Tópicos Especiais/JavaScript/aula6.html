@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Caixa (In/De)cremento</title>
+</head>
+<body>
+
+	<input id="menos" type="button" value="-" onclick="diminuir()">
+	<input id="num" type="text" name="" value="0" readonly="" />
+	<input id="mais" type="button" value="+" onclick="aumentar()">
+
+
+	<script type="text/javascript">
+
+		function el(id) {
+			return document.getElementById(id);
+		}
+		
+		var n = +el("num").value;
+
+		function diminuir() {
+			if (n > 0) {
+				n--;	
+			}
+			
+			el("num").value = n;
+		}
+
+		function aumentar() {
+			if (n < 10) {
+				n++;
+			}
+			
+			el("num").value = n;
+		}
+
+		
+
+
+	</script>
+
+</body>
+</html>
