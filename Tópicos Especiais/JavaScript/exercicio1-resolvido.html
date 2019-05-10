@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercício: Manipulando CSS</title>
+	<style type="text/css">
+			
+		h1 {
+			color:red;
+			background-color: yellow;
+			font-size: 32px;
+			border-width: 3px;
+			border-color:blue;
+			border-style:solid;
+		}
+
+	</style>
+</head>
+<body>
+
+	<h1 id="ifma">INSTITUTO FEDERAL DO MARANHÃO - IFMA</h1>
+
+	<h3>Formatação</h3>
+
+	Cor do Texto: <input type="text" id="cor" value="red" /> <br />
+	Cor de Fundo: <input type="text" id="fundo" value="yellow" /> <br />
+	Tamanho da Fonte (em px): <input id="fonte" type="text" value="32px" /> <br />
+	Largura da Borda (em px): <input id="largura" type="text" value="3px" /> <br />
+	Cor da Borda: <input type="text" id="borda" value="blue" /> <br />
+	<br />
+
+	<input type="button" value="Aplicar Formatação" onclick="mudar()">
+
+	<script type="text/javascript">
+		
+		function mudar() {
+
+			pcor = document.getElementById("cor").value;
+			pfundo = document.getElementById("fundo").value;
+			pfonte = document.getElementById("fonte").value;
+			plargura = document.getElementById("largura").value;
+			pborda = document.getElementById("borda").value;
+
+			el = document.getElementById("ifma").style;
+
+			el.color = pcor;
+			el.backgroundColor = pfundo; // background-color
+			el.fontSize = pfonte; // font-size
+			el.borderWidth = plargura; // border-width
+			el.borderColor = pborda;
+
+		}
+
+	</script>
+
+</body>
+</html>

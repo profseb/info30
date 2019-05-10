@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trabalhando com Inputs</title>
+</head>
+<body>
+
+	<input type="text" id="input" />
+	
+	<br />
+	<br />
+
+	<form id="options">
+		<label>
+			<input type="radio" onclick="mudar(this)" name="option" checked="" value="text" /> 
+			Texto
+		</label> <br />
+		<label>
+		<input type="radio" onclick="mudar(this)" name="option" checked="" value="password" /> Senha </label><br />
+		<label>
+		<input type="radio" onclick="mudar(this)" name="option" value="checkbox" /> Caixa de Marcar </label><br />
+		<label>
+		<input type="radio" onclick="mudar(this)" name="option" value="number" /> Número 
+		</label>
+		<br />
+		<label>
+		<input type="radio" onclick="mudar(this)" name="option" value="button" /> Botão de Clicar </label><br />
+		<label>
+		<input type="radio" onclick="mudar(this)" name="option" value="radio" /> Botão de Radio</label><br />
+
+	</form>
+
+	<br />
+	<br />
+
+	<input type="button" value="Alterar Forma" onclick="alterar()" />
+
+	<script type="text/javascript">
+
+		function mudar(inp) {
+
+			document.getElementById("input").type = inp.value;
+
+		}
+		
+		function alterar() {
+			
+			form = document.getElementById("options");
+
+			ops = form.getElementsByTagName('input');
+
+			for (var i=0; i < ops.length; i++) {
+				if (ops[i].checked) {
+					marcado = ops[i].value;
+				}
+			}
+
+			document.getElementById("input").type = marcado;
+
+		}
+
+
+	</script>
+
+
+</body>
+</html>
