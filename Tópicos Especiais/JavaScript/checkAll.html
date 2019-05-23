@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CheckAll</title>
+</head>
+<body>
+
+	<h1 align="center">CheckAll</h1>
+	
+	<table align="center" width="50%" border="1" cellspacing="0" cellpadding="5">
+		
+		<tr>
+			<th>
+				<input type="checkbox" id="all" onclick="checkAll(this)" />
+			</th>
+			<th>Nome</th>
+			<th>Idade</th>
+		</tr>
+		<tbody>
+			<tr>
+				<td align="center">
+					<input type="checkbox" class="item" />	
+				</td>
+				<td>Fulano</td>
+				<td>16 anos</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<input type="checkbox" class="item" />	
+				</td>
+				<td>Fulano</td>
+				<td>16 anos</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<input type="checkbox" class="item" />	
+				</td>
+				<td>Fulano</td>
+				<td>16 anos</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<input type="checkbox" class="item" />	
+				</td>
+				<td>Fulano</td>
+				<td>16 anos</td>
+			</tr>
+			<tr>
+				<td align="center">
+					<input type="checkbox" class="item" />	
+				</td>
+				<td>Fulano</td>
+				<td>16 anos</td>
+			</tr>
+		</tbody>
+
+	</table>
+
+	<script type="text/javascript">
+			
+		function checkAll(box) { // this vai entrar como box
+
+			// box = document.getElementById("all"); // = this
+
+			caixas = document.getElementsByTagName('input');
+
+			for(var i = 0; i < caixas.length; i++) {
+
+				if (caixas[i].id != "all") {
+					caixas[i].checked = box.checked;
+				}
+
+			}
+
+		}
+
+	</script>
+
+</body>
+</html>
