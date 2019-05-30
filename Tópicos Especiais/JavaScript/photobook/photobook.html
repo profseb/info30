@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Photo Book</title>
+
+	<style type="text/css">
+		
+		body {margin:0;text-align: center;}
+		#youtube {background-color: #F1F1F1;margin:0 auto;padding:30px;}
+		img {width: 100%;}
+		.pequenas img {
+			opacity: 0.5;	
+			cursor: pointer;		
+		}
+		.pequenas img:hover {
+			opacity: 1;
+		}
+
+		.ativo {
+			border:2px solid black;
+			opacity: 1 !important;
+		}
+
+
+	</style>
+
+</head>
+<body>
+
+	<div id="youtube">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/5XgVRcGUGWE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+
+	<h1 align="center">Photo Book</h1>
+
+	<table width="600" border="0" cellspacing="0" cellpadding="5" align="center">
+		<tr>
+			<td colspan="8">
+				<img src="photos/1.jpg" id="foto" />
+			</td>
+		</tr>
+		<tr class="pequenas">
+			<td>
+				<img class="ativo" src="photos/1.jpg" onclick="mostrar(this)"   />
+			</td>
+			<td>
+				<img src="photos/2.jpg" onclick="mostrar(this)" />
+			</td>
+			<td>
+				<img src="photos/3.jpg" onclick="mostrar(this)"  />
+			</td>
+			<td>
+				<img src="photos/4.jpg" onclick="mostrar(this)"  />
+			</td>
+			<td>
+				<img src="photos/5.jpg" onclick="mostrar(this)"  />
+			</td>
+			<td>
+				<img src="photos/6.jpg" onclick="mostrar(this)"  />
+			</td>
+			<td>
+				<img src="photos/7.jpg" onclick="mostrar(this)"  />
+			</td>
+			<td>
+				<img src="photos/8.jpg" onclick="mostrar(this)"  />
+			</td>
+			
+		</tr>
+	</table>
+	
+	<script type="text/javascript">
+		
+		function mostrar(img) {
+
+			document.getElementById("foto").src = img.src;
+
+			imgs = document.querySelectorAll("tr.pequenas img");
+
+			for(var i = 0; i < imgs.length; i++) {
+				imgs[i].className = "";
+			}
+
+			img.className = "ativo";
+
+		}
+
+	</script>
+
+</body>
+</html>
