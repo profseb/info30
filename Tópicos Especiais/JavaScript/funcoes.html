@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Funções em JavaScript</title>
+</head>
+<body>
+
+	<h1 id="teste">INFO 30</h1>
+
+	<p>Primeiro parágrafo</p>
+
+	<p>Segundo parágrafo</p>
+
+	<script type="text/javascript">
+		
+
+		function ola() {
+
+			alert("Olá!");
+
+		}
+
+		function oi(nome) {
+
+			alert("Seja bem-vindo(a), " + nome);
+
+		}
+
+		function dobro(n) {
+			return 2*n;
+		}
+
+		function mudaCSS(id) {
+			return document.getElementById(id).style;
+		}
+
+		function mudaCSS2(s, c) {
+
+			els = document.querySelectorAll(s);
+
+			for(var i = 0; i < els.length; i++) {
+
+				els[i].style.backgroundColor = c;
+
+			}
+
+		}
+
+		//ola();
+		//oi("Fulano");
+
+		//resultado = dobro(5);
+
+		//alert(resultado);
+		
+		//mudaCSS("teste").color = "red";
+		//mudaCSS("teste").fontStyle = "italic";
+
+		//mudaCSS2("#teste, p","blue");
+
+
+	</script>
+
+</body>
+</html>
