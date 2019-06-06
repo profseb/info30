@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Temporizadores JavaScript</title>
+</head>
+<body>
+
+	<h2>Temporizadores JavaScript</h2>
+
+	<p id="texto1">Texto inicial</p>
+	<p id="texto2">Texto inicial</p>
+	<p id="contador">Preparar...</p>
+
+	<input type="button" value="Parar/Iniciar" onclick="stopStart()" />
+	<input type="button" value="Cancela Timeouts" onclick="cancelaTimeouts()" />
+
+	<script type="text/javascript">
+		
+		// São propriedades de elementos HTML
+		// innerText = Texto interno da tag
+		// innerHTML = Código HTML que está dentro da tag
+
+		function atualizaTexto() {
+
+
+			document.getElementById("texto1").innerText = "<i>Sebastião</i>";
+
+		}
+
+		function atualizaHTML() {
+
+			document.getElementById("texto2").innerHTML = "<i>Sebastião</i>";
+
+		}
+
+		function cancelaTimeouts() {
+			clearTimeout(chefeDoTimeout1);
+			clearTimeout(chefeDoTimeout2);
+		}
+
+		// setTimeout("<nome de uma função>",<tempo em milissegundos>);
+		// a função atribuída no primeiro parâmetro será executada, apenas uma vez, após o tempo especificado no segundo parâmetro (em milissegundos)
+		
+		var chefeDoTimeout1 = setTimeout("atualizaTexto()",3000);
+		var chefeDoTimeout2 = setTimeout("atualizaHTML()",5000);
+
+		var n = 0;
+
+		function aumentaContador() {
+			n++;
+			document.getElementById("contador").innerText = n;
+
+			//if (n == 10) {
+				// Interrompe o temporizador controlado pela variável que é passada no parâmetro
+			//	clearInterval(chefeDoTempo);
+			//}
+		}
+		
+		// Faz a mesma coisa que setTimeout, com uma diferença: a função determinada no primeiro parâmetro será executada a cada intervalo de milissegundos definido no segundo parâmetro
+		// setInterval("<nome de uma função>",<tempo em milissegundos>);
+
+		var chefeDoTempo = setInterval("aumentaContador()",1000);
+		var taContando = true;
+
+		function stopStart() {
+
+			if (taContando) {
+				clearInterval(chefeDoTempo);				
+			} else {
+				chefeDoTempo = setInterval("aumentaContador()",1000);
+			}
+
+			taContando = !taContando;
+
+		}
+
+	</script>
+
+</body>
+</html>

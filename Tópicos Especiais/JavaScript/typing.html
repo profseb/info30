@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Typing...</title>
+</head>
+
+<body>
+
+	<input type="text" id="texto" size="40" onkeypress="mudaDigitando(this)" />
+
+	<p id="status">(parado)</p>
+
+	<script type="text/javascript">
+		
+		var intervalo;
+		var t = "";
+		var taDigitando = false;
+
+		function verificarSeEstaDigitando() {
+
+			console.log("Ta testando!!!");
+
+			test = document.getElementById("texto").value;
+
+			if (t == test) {
+				taDigitando = false;
+				document.getElementById("status").innerText = "(parado)";
+			}
+
+			t = test;
+
+		}
+
+		intervalo = setInterval("verificarSeEstaDigitando()",1000);
+
+		function mudaDigitando(el) {
+
+			taDigitando = true;
+			document.getElementById("status").innerText = "(digitando...)";
+
+		}
+
+	</script>
+
+</body>
+</html>
