@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Plugin jQuery</title>
+
+	<link rel="stylesheet" type="text/css" href="jquery-toastmessage/src/main/resources/css/jquery.toastmessage.css">
+		
+</head>
+<body>
+
+	<input type="button" value="Aperte Aqui!" onclick="showSuccessToast()">
+
+	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="jquery-toastmessage/src/main/javascript/jquery.toastmessage.js"></script>
+	
+
+	<script type="text/javascript">
+		
+		function showSuccessToast() {
+	        $().toastmessage('showNoticeToast', "Success Dialog which is fading away ...");
+	    }
+
+	</script>
+
+</body>
+</html>

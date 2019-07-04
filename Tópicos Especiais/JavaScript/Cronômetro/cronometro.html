@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<table width="500" align="center" border="1" cellspacing="0" cellpadding="10">
+		<tr>
+			<th align="center">
+				<h2 id="timer">
+					<span id="minutos">00</span>:<span id="segundos">00</span>:<span id="centesimos">00</span>
+				</h2>
+			</th>			
+		</tr>
+		<tr>
+			<th>
+				<input type="button" value="Iniciar" onclick="playStop(this)" />
+				<input type="button" id="pause" value="Pausar" onclick="pauseContinue(this)" />
+				<input type="button" value="Parcial" onclick="parcial()" />
+			</th>
+		</tr>
+		<tr>
+			<td align="center">Parciais</td>
+		</tr>
+		<tr>
+			<td>
+				<ul id="parciais">
+					
+				</ul>
+			</td>
+		</tr>
+	</table>
+
+	<br>
+	<br>
+
+	<center>
+		<h3>Dicas</h3>
+		0. Incluir jQuery <br />
+		1. Abrir uma tag de script<br />
+		2. Criar uma função e um evento para o botão Iniciar<br />
+
+	</center>
+
+	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+
+		var pausado = true;
+		var ligado = false;
+		var m = 0;
+		var s = 0;
+		var c = 0;
+		var relogio;
+
+		function parcial() {
+			$("#parciais").append("<li>" + $("#timer").text() + "</li>");
+		}
+		
+		function playStop(b) {
+
+			b.value = (b.value == "Iniciar") ? "Parar":"Iniciar";	
+
+			ligado = !ligado;
+
+			if (ligado) {
+				relogio = setInterval("timeUpdate()",10);
+			} else {
+				clearInterval(relogio);
+				s = 0;
+				c = 0;
+				m = 0;
+				$("#pause").val("Pausar");
+				pausado = true;
+				$("#minutos, #segundos, #centesimos").text("00");
+			}
+
+		}
+
+		function pauseContinue(b) {
+
+			if (ligado) {
+				b.value = (b.value == "Pausar") ? "Continuar":"Pausar";	
+
+				pausado = !pausado;
+
+				if (pausado) {
+					relogio = setInterval("timeUpdate()",10);
+				} else {
+					clearInterval(relogio);
+				}
+			}		
+
+		}
+
+		function timeUpdate() {
+
+			c++;
+
+			if (c == 100) {
+				c = 0;
+				s++;
+			}
+
+			if (s == 60) {
+				s = 0;
+				m++;
+			}
+
+			if (c < 10) {
+				$("#centesimos").text("0"+c);				
+			} else {
+				$("#centesimos").text(c);	
+			}
+
+			if (s < 10) {
+				$("#segundos").text("0"+s);				
+			} else {
+				$("#segundos").text(s);	
+			}
+
+			if (m < 10) {
+				$("#minutos").text("0"+m);				
+			} else {
+				$("#minutos").text(m);	
+			}
+
+
+		}
+
+	</script>
+
+</body>
+</html>

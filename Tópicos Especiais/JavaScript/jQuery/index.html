@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Executando jQuery</title>
+
+	<style type="text/css">
+		
+		#teste {background: red;width: 300px;height: 200px;}
+
+	</style>
+</head>
+<body>
+
+	
+	<input type="button" value="Mostrar" onclick="mostrar()" />
+	<input type="button" value="Esconder" onclick="esconder()" />
+
+	<br />
+	<br />
+
+	<div id="teste">
+
+
+	</div>
+
+	<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+		
+		function mostrar() {
+			//document.getElementById("teste").style.display = "block";
+			//$("#teste").show("fast");
+			$("#teste").slideDown("slow");
+		}
+
+		function esconder() {
+			//document.getElementById("teste").style.display = "none";
+			//$("#teste").hide("fast");
+			$("#teste").slideUp("slow");
+		}
+
+		function mostraEsconde() {
+
+			$("#teste").slideDown();
+
+		}
+
+	</script>
+
+
+</body>
+</html>
