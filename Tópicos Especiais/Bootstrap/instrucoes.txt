@@ -1,0 +1,8 @@
+
+div.row
+	div.col-sm-offset-3 .col-sm-6
+		form.well
+			div.form-group
+			input.form-control .input-lg //e-mail
+			input.form-control .input-lg //senha
+			input.btn .btn-lg .btn-primary .btn-block //botão de login

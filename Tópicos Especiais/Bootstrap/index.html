@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Brincando com Bootstrap</title>
+
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+
+	<style type="text/css">
+		
+		#login {
+			background: silver;
+		}
+
+		#login-area {
+			margin-top:100px;
+		}
+
+	</style>
+
+</head>
+<body>
+
+<div id="login" class="row">
+
+	<div id="login-area" class="col-sm-offset-3 col-sm-6">
+		
+		<h2>Entrar no sistema</h2>
+		<form method="post" action="" class="well">
+
+			<div class="form-group">
+				<label for="email">E-mail:</label>
+            	<input class="form-control input-lg" autofocus="autofocus" placeholder="Informe seu E-mail" name="email" id="email" type="text" value="" />
+               
+
+                <label for="senha">Senha:</label>
+            	<input class="form-control input-lg" autofocus="autofocus" placeholder="*******" name="senha" id="senha" type="password" value="" />
+
+            	<br />
+
+            	<input class="btn btn-lg btn-primary btn-block" type="submit" value="Entrar" />
+                
+            </div>
+
+		</form>
+
+	</div>
+
+</div>
+
+</body>
+</html>
